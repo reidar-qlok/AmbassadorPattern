@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AmbassadorPattern
+﻿namespace AmbassadorPattern
 {
     public class Client
     {
@@ -17,9 +11,11 @@ namespace AmbassadorPattern
 
         public void DoSomething()
         {
+            Console.WriteLine("Client is doing something...");
             // Perform some actions
             _ambassador.DoSomething();
             // Continue with other actions
+            Console.WriteLine("Client finished doing something.");
         }
     }
 }

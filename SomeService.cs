@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AmbassadorPattern
+﻿namespace AmbassadorPattern
 {
     public class SomeService : IService
     {
+        private static readonly Random Random = new Random();
+
         public void DoSomething()
         {
-            // Actual implementation of the service logic
+            // Simulate a service that occasionally fails
+            if (Random.Next(1, 10) <= 3) // 30% chance of failure
+            {
+                throw new Exception("Service failure!");
+            }
+            Console.WriteLine("SomeService: Doing something successfully.");
         }
     }
 }

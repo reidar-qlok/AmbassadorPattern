@@ -14,7 +14,18 @@ namespace AmbassadorPattern
             IServiceAmbassador ambassador = new ServiceAmbassador(service);
             Client client = new Client(ambassador);
 
-            client.DoSomething();
+            bool continueRunning = true;
+            while (continueRunning)
+            {
+                client.DoSomething();
+
+                Console.WriteLine("Press Enter to retry, or type 'exit' to quit.");
+                string input = Console.ReadLine();
+                if (input.ToLower() == "exit")
+                {
+                    continueRunning = false;
+                }
+            }
         }
     }
 }
