@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="azure-pipelines.yml" />
+  </ItemGroup>
+
 </Project>
